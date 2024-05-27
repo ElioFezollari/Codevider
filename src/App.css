@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* --- HEADER ---*/
+header{
+  height: 100px;
+  background-color: #265832;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  align-items: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+header img{
+  width: 125px;
+  height: auto;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header a{
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+header a:hover{
+  text-decoration: underline;
 }
 
-.card {
-  padding: 2em;
+.animals-dropdown{
+  position: relative;
+  display: inline-block;
+}
+.animals-button{
+  background-color: #FFCE1F;
+  color: black;
+  border-radius: 10px;
+  padding: 16px; 
+  margin-left: 20px;
+  font-size: 16px;
+  border: none;
 }
 
-.read-the-docs {
-  color: #888;
+.animals-content{
+  display: none;
+  position: absolute;
+  background-color: #FFCE1F;
+  width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 1;
 }
+.animals-content a{
+  color: black;
+  border-radius: inherit;
+  padding: 12px 16px;
+  margin-left: 0;
+  text-decoration: none;
+  display: block;
+}
+.animals-content a:hover {background-color: #ffe176; text-decoration:none;}
+
+.animals-dropdown:hover .animals-content {display: block;}
+.animals-dropdown:hover .animals-button {  background-color: #fed952;;}
