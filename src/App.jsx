@@ -1,6 +1,7 @@
 
 import './App.css'
 import DefaultLayout from './DefaultLayout/DefaultLayout'
+import Home from './Pages/Home'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
     <DefaultLayout/>
-    
+    <Home/>
     </>
   )
 }
