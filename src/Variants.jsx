@@ -10,4 +10,14 @@ const cardAnimation = {
         display:'block'
     }
 }
-export {cardAnimation}
+const textAnimation = {
+    hidden:{
+        opacity:0,
+        x:"-100px"
+    },
+    visible:{
+        opacity:1,
+        x:'100px'
+    }
+}
+export {cardAnimation,textAnimation}

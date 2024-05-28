@@ -2,83 +2,84 @@ import dog from "../../assets/dog.webp";
 import cat from "../../assets/cat.webp";
 import bird from "../../assets/bird.webp";
 
-import eagle from '../../assets/eagle.mp4'
+import eagle from "../../assets/eagle.mp4";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { cardAnimation } from "../../Variants";
+import { cardAnimation,textAnimation } from "../../Variants";
 
-const Hero = () =>{
-    const [animalHovered, setAnimalHovered] = useState(false);
-    return (
-      <section className="hero">
-        <div>
-          <h3>Browse through the most amazing animals.</h3>
-          <p>Pick one of the following galleries to view the animal</p>
-          <ul>
-            <li>
-              <a
-                href=""
-                onMouseEnter={() => setAnimalHovered("dog")}
-                onMouseLeave={() => {
-                  setAnimalHovered(false);
-                }}
-              >
-                Dogs
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                onMouseEnter={() => setAnimalHovered("cat")}
-                onMouseLeave={() => {
-                  setAnimalHovered(false);
-                }}
-              >
-                Cats
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                onMouseEnter={() => setAnimalHovered("bird")}
-                onMouseLeave={() => {
-                  setAnimalHovered(false);
-                }}
-              >
-                Birds
-              </a>
-            </li>
-          </ul>
+const Hero = () => {
+  const animals = [
+    { name: "dog", src: dog, alt: "Picture of a dog" },
+    { name: "cat", src: cat, alt: "Picture of a cat" },
+    { name: "bird", src: bird, alt: "Picture of a bird" },
+  ];
+  const [animalHovered, setAnimalHovered] = useState(false);
 
-        </div>
-        <motion.div className="hero-img">
-          <motion.video autoPlay muted loop src={eagle}
-                    variants={cardAnimation}
-                    initial="hidden"
-                    animate={animalHovered === false ? "visible" : "hidden"}></motion.video>
+  const handleAnimalHover = (animal) => {
+    setAnimalHovered(animal);
+  };
+
+  return (
+    <section className="hero">
+      <motion.div
+      variants={textAnimation}
+      initial="hidden"
+      animate='visible'
+      >
+        <h3>Browse through some of the most amazing animals.</h3>
+        <p>Pick one of the following galleries to view the animal</p>
+        <ul>
+          <li>
+            <a
+              href=""
+              onMouseEnter={() => handleAnimalHover("dog")}
+              onMouseLeave={() => handleAnimalHover(false)}
+            >
+              Dogs
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              onMouseEnter={() => handleAnimalHover("cat")}
+              onMouseLeave={() => handleAnimalHover(false)}
+            >
+              Cats
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              onMouseEnter={() => handleAnimalHover("bird")}
+              onMouseLeave={() => handleAnimalHover(false)}
+            >
+              Birds
+            </a>
+          </li>
+        </ul>
+      </motion.div>
+      <motion.div className="hero-img">
+        <motion.video
+          autoPlay
+          muted
+          loop
+          src={eagle}
+          variants={cardAnimation}
+          initial="hidden"
+          animate={animalHovered === false ? "visible" : "hidden"}
+        ></motion.video>
+        {animals.map((animal, index) => (
           <motion.img
+            key={index}
             variants={cardAnimation}
             initial="hidden"
-            animate={animalHovered === "dog" ? "visible" : "hidden"}
-            src={dog}
-            alt="Picture of a dog"
+            animate={animalHovered === animal.name ? "visible" : "hidden"}
+            src={animal.src}
+            alt={animal.alt}
           />
-          <motion.img
-            variants={cardAnimation}
-            initial="hidden"
-            animate={animalHovered === "cat" ? "visible" : "hidden"}
-            src={cat}
-            alt="Picture of a cat"
-          />
-          <motion.img
-            variants={cardAnimation}
-            initial="hidden"
-            animate={animalHovered === "bird" ? "visible" : "hidden"}
-            src={bird}
-            alt="Picture of a cat"
-          />
-        </motion.div>
-  
-      </section>)
-}
-export default Hero
+        ))}
+      </motion.div>
+    </section>
+  );
+};
+export default Hero;

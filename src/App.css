@@ -108,7 +108,7 @@ header a:hover{
 .hero div{
   display: flex;
   justify-content: center;
-  align-items: center;
+
   flex-direction: column;
   margin-top: 100px;
   width: 500px;
@@ -119,6 +119,9 @@ header a:hover{
 .hero div h3{
   font-size: 60px;
   font-weight: 900;
+}
+.hero div:nth-child(1){
+  margin-right: 20px;
 }
 .hero div p{
   margin-top: 40px;
@@ -133,5 +136,5 @@ header a:hover{
 }
 .hero-img{
   margin-left: 100px;
-  border-radius: 20px 120px 120px 20px;
+  border-radius:  20%;
 }
