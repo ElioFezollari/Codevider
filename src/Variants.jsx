@@ -19,16 +19,24 @@ const textAnimation = {
         opacity:0,
         x:"-100px"
     },
+    hiddenPositive:{
+        opacity:0,
+        x:'100px'
+    },
+    hiddenY:{
+        opacity:0,
+        y:'100px'
+    },
     visible:{
         opacity:1,
-        x:'0px'
+        x:'0px',
+        y:'0px'
     }
 }
 const hamburgerAnimation = {
     open :{
       x:"0",
       opacity:1,
-
       transition:{
         type:"spring",
     }
@@ -39,4 +47,5 @@ const hamburgerAnimation = {
       x:'10vw',
     }
   }
+
 export {cardAnimation,textAnimation,hamburgerAnimation}
