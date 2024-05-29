@@ -72,8 +72,9 @@ header a:hover{
 
 /* --- HOME --- */
 
+/* *Hero* */
 .hero{
-  height: 100vh;
+  height: 90vh;
   display: flex;
   
   color: black;
@@ -102,15 +103,17 @@ header a:hover{
   width: 120px;
   transition: all 0.2s ease-in-out;
 }
+.hero ul li:nth-of-type(1) a{
+  margin-left: 0;
+}
 .hero ul li a:hover{
   background-color: #ffe176;
 }
 .hero div{
   display: flex;
   justify-content: center;
-
   flex-direction: column;
-  margin-top: 100px;
+
   width: 500px;
   height: 500px;
   position: relative;
@@ -119,9 +122,6 @@ header a:hover{
 .hero div h3{
   font-size: 60px;
   font-weight: 900;
-}
-.hero div:nth-child(1){
-  margin-right: 20px;
 }
 .hero div p{
   margin-top: 40px;
@@ -134,7 +134,70 @@ header a:hover{
   object-fit: cover;
   border-radius: inherit;
 }
+.hero .hero-text-wrapper,.hero .hero-img-wrapper{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .hero-img{
-  margin-left: 100px;
+  width: 50%;
   border-radius:  20%;
+}
+
+
+/* --- UTILITIES --- */
+.header-gap{
+  padding-top: 100px;
+  width:  100%;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 1200px) {
+  .hero div{
+    width: 350px;
+    height: 350px;
+  }
+  .hero div h3{
+    font-size: 40px;
+  }
+  .hero-img {
+  }
+  .hero ul li a{
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .hero div{
+    width: 300px;
+    height: 300px;
+  }
+  .hero div h3{
+    font-size: 30px;
+  }
+  .hero ul li a{
+    width: 80px;
+  }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .hero div{
+    width: 250px;
+    height: 250px;
+  }
+  .hero ul li a{
+    width: 70px;
+  }
+}
+@media only screen and (max-width: 601px) {
+  .hero{
+    flex-direction: column;
+  }
+  .hero-img-wrapper{
+    margin-top: 50px;
+  }
 }

@@ -21,6 +21,7 @@ const Hero = () => {
 
   return (
     <section className="hero">
+      <div       className="hero-text-wrapper">
       <motion.div
       variants={textAnimation}
       initial="hidden"
@@ -58,6 +59,8 @@ const Hero = () => {
           </li>
         </ul>
       </motion.div>
+      </div>
+      <div className="hero-img-wrapper">
       <motion.div className="hero-img">
         <motion.video
           autoPlay
@@ -79,6 +82,7 @@ const Hero = () => {
           />
         ))}
       </motion.div>
+      </div>
     </section>
   );
 };
