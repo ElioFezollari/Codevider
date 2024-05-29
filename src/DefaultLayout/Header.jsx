@@ -1,4 +1,5 @@
 import Logo from "../assets/petexpo.svg";
+import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 const Header = () => {
   return (
     <header>
@@ -18,6 +19,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <HamburgerMenu/>
     </header>
   );
 };

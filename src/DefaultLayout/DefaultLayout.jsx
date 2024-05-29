@@ -4,7 +4,7 @@ const DefaultLayout = () =>{
     return(
     <>
     <Header/>
-    <div className='header-gap'></div>
+
     </>
 )
 }  

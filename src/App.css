@@ -11,6 +11,7 @@
 /* --- HEADER ---*/
 header{
   height: 100px;
+  z-index: 20;
   background-color: #171717;
   display: flex;
   justify-content: space-between;
@@ -74,9 +75,9 @@ header a:hover{
 
 /* *Hero* */
 .hero{
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  
+  position: relative;
   color: black;
   justify-content: center;
   align-items: center;
@@ -113,7 +114,7 @@ header a:hover{
   display: flex;
   justify-content: center;
   flex-direction: column;
-
+  margin-top: 100px;
   width: 500px;
   height: 500px;
   position: relative;
@@ -152,8 +153,101 @@ header a:hover{
   width:  100%;
 }
 
-/* MEDIA QUERY */
+/*Mobile Menu*/
+.container {
+  position: relative;
+  padding: 1.5rem;
+  z-index: 5;
+}
 
+.menu-toggle {
+  position: absolute;
+  right: 1.5rem;
+  top: 49%;
+  transform: translate(0, -50%);
+  height: 26px;
+  width: 29px;
+  color: white;
+}
+
+.menu-toggle:hover {
+  color: white;
+}
+
+.menu-toggle-bar {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -1pt;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle-bar.menu-toggle-bar--top {
+  transform: translate(0, -8px);
+}
+
+.menu-toggle-bar.menu-toggle-bar--middle {
+}
+
+.menu-toggle-bar.menu-toggle-bar--bottom {
+  transform: translate(0, 8px);
+}
+
+.nav-open .menu-toggle-bar.menu-toggle-bar--top {
+  transform: translate(0, 0) rotate(45deg);
+}
+
+.nav-open .menu-toggle-bar.menu-toggle-bar--middle {
+  opacity: 0;
+}
+
+.nav-open .menu-toggle-bar.menu-toggle-bar--bottom {
+  transform: translate(0, 0) rotate(-45deg);
+}
+
+.mobile-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0,0.6);
+  display: none;
+}
+.hamburger-menu{
+  display: none;
+}
+.mobile-menu{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #171717;
+  width: 250px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-menu div{
+  width: 100%;
+}
+.link-mobile-header-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.link-mobile-header-div a{
+  margin-bottom: 50px;
+}
+
+/* MEDIA QUERY */
 @media only screen and (max-width: 1200px) {
   .hero div{
     width: 350px;
@@ -199,5 +293,11 @@ header a:hover{
   }
   .hero-img-wrapper{
     margin-top: 50px;
+  }
+  .hamburger-menu{
+    display: block;
+}
+  header nav{
+    display: none;
   }
 }

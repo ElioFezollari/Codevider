@@ -24,4 +24,19 @@ const textAnimation = {
         x:'0px'
     }
 }
-export {cardAnimation,textAnimation}
+const hamburgerAnimation = {
+    open :{
+      x:"0",
+      opacity:1,
+
+      transition:{
+        type:"spring",
+    }
+    },
+    closed:{
+      opacity:0,
+
+      x:'10vw',
+    }
+  }
+export {cardAnimation,textAnimation,hamburgerAnimation}
