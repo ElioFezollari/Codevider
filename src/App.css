@@ -7,7 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  overflow-x: hidden;
+}
 /* --- HEADER ---*/
 header{
   height: 100px;
@@ -120,6 +122,10 @@ header a:hover{
   position: relative;
   top: 0;
 }
+.responsive-div{
+  width: 500px;
+  height: 500px;
+}
 h3{
   font-size: 60px;
   font-weight: 900;
@@ -156,9 +162,6 @@ h3{
   align-items: center;
   position: relative;
 }
-#about-us h3{
-  margin-top: 50px;
-}
 
 #about-us div{
   width: 50%;
@@ -169,17 +172,14 @@ h3{
 }
 
 #about-us img{
-  width: 500px;
-  height: 500px;
   object-fit: cover;
   border-radius: 20%;
 }
 #about-us div:nth-child(1){
   position: relative;
+
 }
 #about-us div div{
-  width: 500px;
-  height: 500px;
   position: relative;
 }
 #about-us .dog-icon{
@@ -190,11 +190,21 @@ h3{
   height: 140px;
   transform: rotate(30deg) !important;
 }
+#about-us .about-us-text{
+  width: 80%;
+}
 
 /* --- UTILITIES --- */
 .header-gap{
   padding-top: 100px;
   width:  100%;
+}
+.responsive-div,#about-us .responsive-div{
+  width: 500px;
+  height: 500px;
+}
+.responsive-paragraph{
+  font-size: 16px;
 }
 
 /* --- MOBILE MENU ---*/
@@ -293,7 +303,7 @@ h3{
 
 /* MEDIA QUERY */
 @media only screen and (max-width: 1200px) {
-  .hero div{
+  .hero div,.responsive-div,#about-us .responsive-div{
     width: 350px;
     height: 350px;
   }
@@ -304,10 +314,18 @@ h3{
   .hero ul li a{
     width: 100px;
   }
+  .responsive-paragraph{
+    font-size: 13px;
+  }
+  #about-us .dog-icon {
+    width: 100px;
+    height: 100px;
+    left: 0;
+}
 }
 
 @media only screen and (max-width: 920px) {
-  .hero div{
+  .hero div,.responsive-div,#about-us .responsive-div{
     width: 300px;
     height: 300px;
   }
@@ -317,17 +335,25 @@ h3{
   .hero ul li a{
     width: 80px;
   }
+  #about-us .dog-icon {
+    width: 80px;
+    height: 80px;
+    left: 0;
+}
 
 
 }
 
 @media only screen and (max-width: 768px) {
-  .hero div{
+  .hero div,.responsive-div,#about-us .responsive-div{
     width: 250px;
     height: 250px;
   }
   .hero ul li a{
     width: 70px;
+  }
+  .responsive-paragraph{
+    font-size: 12px;
   }
 }
 @media only screen and (max-width: 601px) {
@@ -343,4 +369,21 @@ h3{
   header nav{
     display: none;
   }
+  #about-us{
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  #about-us img:nth-child(1){
+    margin-top: 40px;
+  }
+  .about-us-image-wrapper{
+    margin-bottom: 40px;
+  }
+  #about-us div{
+    width: 80%;
+  }
+  #about-us .about-us-text {
+    width: 90%;
+}
 }

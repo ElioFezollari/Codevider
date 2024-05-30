@@ -3,7 +3,7 @@ const cardAnimation = {
         opacity:0,
         x:'100px',
         y:'20px',
-        rotate:3,
+        rotate:10,
         display:'none'
     },
     visible:{
