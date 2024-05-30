@@ -1,23 +1,27 @@
 
 import './App.css'
+import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import DefaultLayout from './DefaultLayout/DefaultLayout'
 import Home from './Pages/Home'
-import Header from './DefaultLayout/Header'
 
-import Footer from './DefaultLayout/Footer'
-function App() {
 
-  const getBirds =async () =>{
-    const response = await fetch('https://freetestapi.com/api/v1/birds')
-    const birds = await response.json()
-    console.log(birds)
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<DefaultLayout/>,
+    children:[
+      {
+        path:'/',
+        element:<Home/>
+      }
+    ]
   }
-  getBirds()
+])
+
+function App() {
   return (
     <>
-    <Header/>
-    <Home/>
-    <Footer/>
+      <RouterProvider router={router} />
     </>
   )
 }
