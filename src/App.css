@@ -193,6 +193,106 @@ h3{
 #about-us .about-us-text{
   width: 80%;
 }
+/* --- CONTACT US --- */
+#contact-us{
+  height: 80vh;
+  background-color: #E8E9EB;
+  color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-us-wrapper{
+  width: 80%;
+  background-color: white;
+  color: #E8E9EB;
+  border-radius: 50px;
+  height: 80%;
+}
+.contact-us-content{
+  display: flex;
+  height: 100%;
+}
+.contact ,.message{
+  padding: 50px;
+}
+.contact{
+  background-image: url('assets/contact-cat.webp');
+  background-size: cover;
+  background-position: 50% 1%;
+  width: 40%;
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.message{
+  width: 60%;
+  background-color: #171717;
+  height: 100%;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+.message div{
+  height: 90%;
+}
+.message form{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: start;
+}
+
+.message form div{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width:  100%;
+}
+.message input{
+  background-color: #EDF6FD;
+  border: 0;
+  color: #E5E6E8;
+  height: 40px;
+  border:0;
+  background-color: transparent;
+
+  border-bottom: 2px solid #EDF6FD;
+}
+.message input[type=submit]{
+  border: 2px solid white;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.message input[type=submit]:hover{
+  background-color: white;
+  color: #171717;
+}
+.message form > label{
+  width: 100%;
+}
+.message label{
+  display: flex;
+  flex-direction: column;
+}
+.message input:focus{
+  outline: none;
+}
+.message form textarea{
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  border: 2px solid white;
+  margin-top: 10px;
+  color: white;
+  resize: none;
+  outline: none;
+  padding: 10px;
+}
 
 /* --- UTILITIES --- */
 .header-gap{
