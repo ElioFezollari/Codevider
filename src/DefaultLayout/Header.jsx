@@ -7,9 +7,9 @@ const Header = () => {
         <img src={Logo} alt="Petexpo Logo" />
       </a>
       <nav>
-        <a href="">Home</a>
-        <a href="">About Us</a>
-        <a href="">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact Us</a>
         <div class="animals-dropdown">
           <button class="animals-button">Animals</button>
           <div class="animals-content">

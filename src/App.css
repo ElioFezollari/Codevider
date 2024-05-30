@@ -7,6 +7,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   overflow-x: hidden;
 }
@@ -407,6 +411,15 @@ h3{
 }
 .link-mobile-header-div a{
   margin-bottom: 50px;
+}
+footer{
+  width: 100%;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  background-color: #171717;
+  color: #E8E9EB;
+  display: flex;
 }
 
 /* MEDIA QUERY */

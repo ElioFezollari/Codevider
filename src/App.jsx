@@ -2,7 +2,9 @@
 import './App.css'
 import DefaultLayout from './DefaultLayout/DefaultLayout'
 import Home from './Pages/Home'
+import Header from './DefaultLayout/Header'
 
+import Footer from './DefaultLayout/Footer'
 function App() {
 
   const getBirds =async () =>{
@@ -13,9 +15,9 @@ function App() {
   getBirds()
   return (
     <>
-    <DefaultLayout/>
-
+    <Header/>
     <Home/>
+    <Footer/>
     </>
   )
 }
