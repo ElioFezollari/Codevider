@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { textAnimation } from "../../Variants";
-import dogIcon from '../../assets/dog-icon.svg'
-import dog from "../../assets/dog2.webp";
+import catIcon from '../../assets/cat-icon.svg'
 import { motion } from "framer-motion";
 const ContactUs = () =>{
     const [name,setName] = useState('')
@@ -13,30 +12,32 @@ const ContactUs = () =>{
             <div className="contact-us-wrapper">
             <div className="contact-us-content">
                 <div className="message">
-                <h3>Contact Us</h3>
+                <motion.h3 variants={textAnimation} viewport={{once:true}} initial='hidden' whileInView='visible'>Contact Us</motion.h3>
                     <div>
                         <form action="">
-                            <div>
-                            <label >First Name:{' '} 
+                            <div >
+                            <motion.label variants={textAnimation} initial='hidden' whileInView='visible' viewport={{once:true}}  >First Name:{' '} 
                                 <input type="text" typeof="text" value={name} onChange={(e)=>setName(e.target.value)} />
-                            </label>
-                            <label >Last Name:{' '} 
+                            </motion.label >
+                            <motion.label  variants={textAnimation} initial='hidden' whileInView='visible' transition={{delay:0.1}} viewport={{once:true}} >Last Name:{' '} 
                                 <input type="text" typeof="text" value={lName} onChange={(e)=>setLName(e.target.value)} />
-                            </label>
-                            <label >Email:{' '} 
+                            </motion.label>
+                            <motion.label className="email-label" variants={textAnimation} initial='hidden' whileInView='visible' transition={{delay:0.2}} viewport={{once:true}}>Email:{' '} 
                                 <input type="email" typeof="text" value={email} onChange={(e)=>setEmail(e.target.value)} />
-                            </label>
+                            </motion.label>
                             </div>
-                            <label> Message: 
+                            <motion.label variants={textAnimation} viewport={{once:true}} initial='hidden' whileInView='visible'> Message: 
                                 <textarea value={message} onChange={((e)=>setMessage(e.target.value))}/>
-                            </label>
-                            <input type="submit" />
+                            </motion.label>
+                            <motion.div variants={textAnimation} viewport={{once:true}} initial='hidden' whileInView='visible'>
+                            <motion.input type="submit" value='Send' />
+                            </motion.div>
                         </form>
                     </div>
                 </div>
-                <div className="contact">
-
-                </div>
+                <motion.div className="contact" variants={textAnimation} viewport={{once:true}} initial='hiddenY' whileInView='visible'>
+                    <motion.img variants={textAnimation} initial='hidden' whileInView='visible' viewport={{once:true}} transition={{delay:0.2}} src={catIcon} className="cat-icon" alt="cat-icon" />
+                </motion.div>
                 </div>
             </div>
         </div>

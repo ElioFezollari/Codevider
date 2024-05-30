@@ -182,7 +182,7 @@ h3{
 #about-us div div{
   position: relative;
 }
-#about-us .dog-icon{
+#about-us .dog-icon,.cat-icon{
   position: absolute;
   bottom: 0;
   left: 20px;
@@ -217,6 +217,7 @@ h3{
   padding: 50px;
 }
 .contact{
+  position: relative;
   background-image: url('assets/contact-cat.webp');
   background-size: cover;
   background-position: 50% 1%;
@@ -224,6 +225,12 @@ h3{
   height: 100%;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+}
+.contact .cat-icon{
+  left: auto;
+  right: 20px;
+  top:20px;
+  transform: rotate(220deg) !important;
 }
 .message{
   width: 60%;
@@ -266,6 +273,7 @@ h3{
   border: 2px solid white;
   padding: 10px;
   cursor: pointer;
+  width: 100px;
   transition: all 0.2s ease-in-out;
 }
 .message input[type=submit]:hover{
@@ -422,12 +430,46 @@ h3{
     height: 100px;
     left: 0;
 }
+.message form div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.message form input{
+  width: 150px;
+}
+.message form input[type=text],.message form input[type=email]{
+  height: 30px;
+}
+.email-label{
+  margin-top: 20px;
+}
+.cat-icon{
+  width: 100px;
+  height: 100px;
+}
 }
 
 @media only screen and (max-width: 920px) {
   .hero div,.responsive-div,#about-us .responsive-div{
     width: 300px;
     height: 300px;
+  }
+  .message form div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .message form label{
+    width: 100%;
+  }
+  .message form input{
+    width: 100%;
+  }
+  .message form input[type=text],.message form input[type=email]{
+    height: 30px;
+  }
+  .message form label{
+    margin-top: 20px;
   }
   h3{
     font-size: 30px;
@@ -440,8 +482,14 @@ h3{
     height: 80px;
     left: 0;
 }
-
-
+  .cat-icon{
+    width: 80px;
+    height: 80px;
+    right: 0;
+  }
+  .message input[type=submit]{
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -485,5 +533,19 @@ h3{
   }
   #about-us .about-us-text {
     width: 90%;
+}
+.message{
+  width: 100%;
+  border-radius: 50px;
+  padding: 30px;
+}
+#contact-us{
+  padding: 30px;
+}
+.contact-us-wrapper,#contact-us{
+  height: auto;
+}
+.contact{
+  display: none;
 }
 }
