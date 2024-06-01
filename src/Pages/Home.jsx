@@ -1,7 +1,7 @@
 
-import AboutUs from "./Components/AboutUs";
-import ContactUs from "./Components/ContactUs";
-import Hero from "./Components/Hero";
+import AboutUs from "./Components/HomeComponents/AboutUs";
+import ContactUs from "./Components/HomeComponents/ContactUs";
+import Hero from "./Components/HomeComponents/Hero";
 
 const Home = () => {
   return (

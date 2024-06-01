@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { textAnimation } from "../../Variants";
-import catIcon from '../../assets/cat-icon.svg'
+import { textAnimation } from "../../../Variants";
+import catIcon from '../../../assets/cat-icon.svg'
 import { motion } from "framer-motion";
 const ContactUs = () =>{
     const [name,setName] = useState('')

@@ -1,6 +1,6 @@
-import {  textAnimation } from "../../Variants";
-import dogIcon from '../../assets/dog-icon.svg'
-import dog from "../../assets/dog2.webp";
+import {  textAnimation } from "../../../Variants";
+import dogIcon from '../../../assets/dog-icon.svg'
+import dog from "../../../assets/dog2.webp";
 import { motion } from "framer-motion";
 const AboutUs = () => {
   return (

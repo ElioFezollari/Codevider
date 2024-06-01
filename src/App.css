@@ -421,7 +421,42 @@ footer{
   color: #E8E9EB;
   display: flex;
 }
+/* --- ANIMALS  ---*/
+.animal-hero{
+  width: 100%;
+  background-color: #171717;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.animal-hero video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.animal-hero-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #171717;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.animal-hero-overlay h1{
+  font-size: 300px;
 
+  opacity: 1;
+  text-transform: capitalize;
+}
+.animal-hero-overlay p{
+  font-size: 50px;
+}
 /* MEDIA QUERY */
 @media only screen and (max-width: 1200px) {
   .hero div,.responsive-div,#about-us .responsive-div{

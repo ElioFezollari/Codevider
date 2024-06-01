@@ -1,11 +1,11 @@
-import dog from "../../assets/dog.webp";
-import cat from "../../assets/cat.webp";
-import bird from "../../assets/bird.webp";
+import dog from "../../../assets/dog.webp";
+import cat from "../../../assets/cat.webp";
+import bird from "../../../assets/bird.webp";
 
-import eagle from "../../assets/eagle.mp4";
+import eagle from "../../../assets/eagle.mp4";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { cardAnimation,textAnimation } from "../../Variants";
+import { cardAnimation,textAnimation } from "../../../Variants";
 
 const Hero = () => {
   const animals = [
