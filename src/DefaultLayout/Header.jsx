@@ -9,14 +9,14 @@ const Header = () => {
       </a>
       <nav>
         <Link to='/'>Home</Link>
-        <a href="#about-us">About Us</a>
-        <a href="#contact-us">Contact Us</a>
+        <a href="#about-us" >About Us</a>
+        <a href="/#contact-us">Contact Us</a>
         <div className="animals-dropdown">
           <button className="animals-button">Animals</button>
           <div className="animals-content">
             <Link to='dogs'>Dogs</Link>
-            <a href="#">Cats</a>
-            <a href="#">Birds</a>
+            <Link to="cats">Cats</Link>
+            <Link to="birds">Birds</Link>
           </div>
         </div>
       </nav>

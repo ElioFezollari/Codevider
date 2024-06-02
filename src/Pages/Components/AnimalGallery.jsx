@@ -1,60 +1,50 @@
 import { useEffect, useState } from "react";
 import { getAll } from "../Services/getAll";
-import dogPictures from "../Services/DogPictures";
-const AnimalGallery = ({ animal }) => {
-  const [animals, setAnimals] = useState();
-  const setAllAnimals = async () => {
-    const newAnimals = await getAll(animal);
-    setAnimals(newAnimals);
-  };
+const AnimalGallery = ({ animal,pictures }) => {
+  const [animals, setAnimals] = useState([]);
+  const [filteredSearch, setFilteredSearch] = useState("");
   useEffect(() => {
-    setAllAnimals();
+    getAll(animal).then((animal) => setAnimals(animal));
   }, []);
-  const defaultOptions = {
-    reverse: false,
-    max: 35,
-    perspective: 7000,
-    scale: 1.1,
-    speed: 1000,
-    transition: true,
-    axis: null,
-    reset: true,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-  };
+console.log(animals)
+  let filteredAnimals = animals.filter((animal) =>
+    animal.name.toLowerCase().includes(filteredSearch.toLowerCase())
+  );
 
   return (
     <div className="animal-gallery">
       <div className="animal-gallery-wrapper">
         <input
+          value={filteredSearch}
+          onChange={(e) => setFilteredSearch(e.target.value)}
           className="animal-search"
           type="text"
           placeholder={` \u{1F50E} Search for ${animal}`}
         />
       </div>
       <div className="animal-card-wrapper">
-        {animals &&
-          animals.map((animal) => {
+        {filteredAnimals.length>0 ? (
+          filteredAnimals.map((animal) => {
             return (
-              <div
-                className="animal-card"
-                options={defaultOptions}
-                key={animal.id}
-              >
+              <div className="animal-card" key={animal.id}>
                 <div className="animal-card-image">
-                <img
-                  src={
-                    dogPictures[animal.name.toLowerCase().replace(/\s/g, "")]
-                  }
-                  alt=""
-                />
+                  <img
+                    src={
+                      pictures[animal.name.toLowerCase().replace(/\s/g, "")]
+                    }
+                    alt=""
+                  />
                 </div>
                 <div className="animal-card-text">
-                <h4>{animal.name}</h4>
-                <p>Country of origin: {animal.origin}</p>
+                  <h4>{animal.name}</h4>
+                  <p>Country of origin: {animal.origin}</p>
                 </div>
               </div>
             );
-          })}
+          })
+        ) : (
+          <h5>Sorry, no {animal} match your search!</h5>
+        )}
       </div>
     </div>
   );

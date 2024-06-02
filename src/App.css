@@ -464,6 +464,13 @@ footer{
   flex-direction: column;
   padding: 50px;
 }
+.animal-gallery h5{
+  font-size: 45px;
+  width: 100%;
+  text-align: center;
+  grid-column: 1/5;
+  color: red;
+}
 .animal-gallery-wrapper{
   display: flex;
   flex-direction: column;
@@ -507,7 +514,7 @@ footer{
   transition: all 0.2s ease-in-out;
 }
 .animal-card:hover img{
-  transform: scale(1.2);
+  transform: scale(1.05);
 
   position: relative;
 }
