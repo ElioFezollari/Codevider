@@ -491,7 +491,6 @@ footer{
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   margin-top: 50px;
-
 }
 .animal-card{
   z-index: 0;
@@ -556,6 +555,10 @@ footer{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.animal-card-wrapper{
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
 .message form input{
   width: 150px;
 }
@@ -572,6 +575,10 @@ footer{
 }
 
 @media only screen and (max-width: 920px) {
+  .animal-card-wrapper{
+    grid-template-columns: 1fr 1fr ;
+  }
+
   .hero div,.responsive-div,#about-us .responsive-div{
     width: 300px;
     height: 300px;
@@ -625,8 +632,23 @@ footer{
   .responsive-paragraph{
     font-size: 12px;
   }
+  .animal-hero-overlay h1 {
+    font-size: 200px;
+}
+.animal-hero-overlay p {
+  font-size: 30px;
+}
+.animal-search {
+  width: 300px;
+}
 }
 @media only screen and (max-width: 601px) {
+  .animal-hero-overlay h1 {
+    font-size: 150px;
+}
+  .animal-card-wrapper{
+    grid-template-columns: 1fr ;
+  }
   .hero{
     flex-direction: column;
   }
