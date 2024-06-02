@@ -39,7 +39,9 @@ console.log(animals)
                 </div>
                 <div className="animal-card-text">
                   <h4>{animal.name}</h4>
-                  <p>Country of origin: {animal.origin}</p>
+                  {animal.origin && <p>Country of origin: {animal.origin}</p>}
+                  {animal.place_of_found && <p>Can be found in:{animal.place_of_found}</p>}
+
                 </div>
               </motion.div>
             );
