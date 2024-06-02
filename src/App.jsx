@@ -5,6 +5,7 @@ import DefaultLayout from './DefaultLayout/DefaultLayout'
 import Home from './Pages/Home'
 import Dogs from './Pages/Dogs'
 import Cats from './Pages/Cats'
+import Birds from './Pages/Birds'
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
       path:'cats',
       element:<Cats/>
+    },
+    {
+      path:'birds',
+      element:<Birds/>
     }
     ]
   }

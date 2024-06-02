@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAll } from "../Services/getAll";
+import { motion } from "framer-motion";
+import {textAnimation} from '../../Variants'
 const AnimalGallery = ({ animal,pictures }) => {
   const [animals, setAnimals] = useState([]);
   const [filteredSearch, setFilteredSearch] = useState("");
@@ -26,11 +28,11 @@ console.log(animals)
         {filteredAnimals.length>0 ? (
           filteredAnimals.map((animal) => {
             return (
-              <div className="animal-card" key={animal.id}>
+              <motion.div variants={textAnimation} viewport={{once:true}} initial='hiddenY' whileInView='visible' className="animal-card" key={animal.id}>
                 <div className="animal-card-image">
                   <img
                     src={
-                      pictures[animal.name.toLowerCase().replace(/\s/g, "")]
+                      pictures[animal.name.toLowerCase().replace(/[\s-]/g, "")]
                     }
                     alt=""
                   />
@@ -39,7 +41,7 @@ console.log(animals)
                   <h4>{animal.name}</h4>
                   <p>Country of origin: {animal.origin}</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })
         ) : (

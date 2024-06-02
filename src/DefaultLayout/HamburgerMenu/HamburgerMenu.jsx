@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { hamburgerAnimation, textAnimation } from "../../Variants";
+import { Link } from "react-router-dom";
 const HamburgerMenu = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const clickedButton = () => {
@@ -13,11 +14,11 @@ const HamburgerMenu = () => {
   };
   const links = [
     {
-      href: "about-us",
+      href: "/#about-us",
       content: "About Us",
     },
     {
-      href: "contact-us",
+      href: "/#contact-us",
       content: "Contact Us",
     },
     {
@@ -68,9 +69,9 @@ const HamburgerMenu = () => {
           className="link-mobile-header-div"
         >
           {links.map((link, index) => (
-            <a onClick={clickedButton} key={index} href={link.href}>
+            <Link onClick={clickedButton} key={index} to={link.href}>
               {link.content}
-            </a>
+            </Link>
           ))}
         </motion.nav>
       </motion.div>
