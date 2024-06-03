@@ -435,6 +435,7 @@ footer{
   object-fit: cover;
 }
 .animal-hero-overlay{
+  padding-top: 60px;
   position: absolute;
   top: 0;
   left: 0;
@@ -447,6 +448,9 @@ footer{
   justify-content: center;
   align-items: center;
   color: white;
+}
+.animal-hero-overlay img{
+  width: 60px;
 }
 .animal-hero-overlay h1{
   font-size: 300px;
@@ -477,12 +481,26 @@ footer{
   align-items: center;
   width: 100%;
 }
+.animal-search-wrapper{
+  width: 400px;
+  position: relative;
+}
+.animal-gallery-wrapper img{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 25px;
+}
 .animal-search{
   width: 400px;
   padding: 20px;
   background-color: transparent;
   border: 1px solid #171717;
-  border-radius: 20px;
+  background-color: #171717;
+  color: white;
+
 }
 .animal-card-wrapper{
   display: grid;
@@ -644,7 +662,8 @@ footer{
 .animal-hero-overlay p {
   font-size: 30px;
 }
-.animal-search {
+
+.animal-search,.animal-search-wrapper {
   width: 300px;
 }
 }
