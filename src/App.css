@@ -689,6 +689,14 @@ footer{
   .animal-card-wrapper{
     grid-template-columns: 1fr ;
   }
+  .animal-gallery-wrapper {
+    flex-direction: column;
+  }
+  .animal-select{
+    margin-left: 0;
+    margin-top: 20px;
+    width: 300px;
+  }
   .hero{
     flex-direction: column;
   }
