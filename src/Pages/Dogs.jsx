@@ -1,6 +1,6 @@
-import AnimalHero from "./Components/AnimalHero"
+import AnimalHero from "./Components/AnimalComponents/AnimalHero"
 import dogSwimming from '../assets/dog-swimming.mp4'
-import AnimalGallery from "./Components/AnimalGallery"
+import AnimalGallery from "./Components/AnimalComponents/AnimalGallery"
 import { useEffect } from "react"
 import dogPictures from "./Services/AnimalPictures/DogPictures"
 const Dogs = () =>{

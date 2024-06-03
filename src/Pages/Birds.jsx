@@ -1,6 +1,6 @@
-import AnimalHero from "./Components/AnimalHero"
+import AnimalHero from "./Components/AnimalComponents/AnimalHero"
 import birdVideo from '../assets/bird-video.mp4'
-import AnimalGallery from "./Components/AnimalGallery"
+import AnimalGallery from "./Components/AnimalComponents/AnimalGallery"
 import birdPictures from "./Services/AnimalPictures/BirdPictures"
 import { useEffect } from "react"
 const Birds = () =>{
