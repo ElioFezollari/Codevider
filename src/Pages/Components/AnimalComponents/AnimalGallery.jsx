@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { getAll } from "../../Services/getAll";
 import AnimalCard from "./AnimalCard";
+import AnimalPopUp from '../AnimalComponents/AnimalPopUp'
 import magnifying from "../../../assets/magnifying.svg";
+
 const AnimalGallery = ({ animal, pictures }) => {
   const [animals, setAnimals] = useState([]);
   const [filteredSearch, setFilteredSearch] = useState("");
   const [filteredSelect, setFilteredSelect] = useState();
+  const [selectedAnimal, setSelectedAnimal] = useState(null);
   useEffect(() => {
     getAll(animal).then((animal) => setAnimals(animal));
   }, []);
@@ -30,6 +33,13 @@ const AnimalGallery = ({ animal, pictures }) => {
       uniqueCategories.push(animal.place_of_found);
     }
   });
+
+  const cardClicked =(id) =>{
+    setSelectedAnimal(id)
+  }
+  const popUpClosed = () =>{
+    setSelectedAnimal(null);
+  }
 
   
   return (
@@ -64,11 +74,17 @@ const AnimalGallery = ({ animal, pictures }) => {
       </div>
       <div className="animal-card-wrapper">
         <AnimalCard
+          cardClicked={cardClicked}
           filteredAnimals={filteredAnimals}
           animal={animal}
           pictures={pictures}
         />
       </div>
+
+    {selectedAnimal &&(
+        <AnimalPopUp animal={selectedAnimal} closePopUp={popUpClosed} pictures={pictures}/>
+      )}
+      
     </div>
   );
 };

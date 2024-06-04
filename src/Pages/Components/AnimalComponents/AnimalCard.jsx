@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import {textAnimation} from '../../../Variants'
-
-const AnimalCard = ({ filteredAnimals,pictures }) => {
+const AnimalCard = ({ filteredAnimals,pictures,animal,cardClicked}) => {
     return (
       <>
         {filteredAnimals.length > 0 ? (
           filteredAnimals.map((animal) => {
             return (
               <motion.div
+              onClick={()=>cardClicked(animal)}
                 variants={textAnimation}
                 viewport={{ once: true }}
                 initial="hiddenY"
@@ -18,7 +18,7 @@ const AnimalCard = ({ filteredAnimals,pictures }) => {
                 <div className="animal-card-image">
                   <img
                     src={pictures[animal.name.toLowerCase().replace(/[\s-]/g, "")]}
-                    alt=""
+                    alt="picture of an animal"
                   />
                 </div>
                 <div className="animal-card-text">
@@ -33,7 +33,7 @@ const AnimalCard = ({ filteredAnimals,pictures }) => {
             );
           })
         ) : (
-          <h5>Sorry, no animals match your search!</h5>
+          <h5>Sorry, no {animal} were found!</h5>
         )}
       </>
     );
