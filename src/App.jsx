@@ -6,12 +6,12 @@ import Home from './Pages/Home'
 import Dogs from './Pages/Dogs'
 import Cats from './Pages/Cats'
 import Birds from './Pages/Birds'
-
-
+import NotFound from './Pages/NotFound'
 const router = createBrowserRouter([
   {
     path:'/',
     element:<DefaultLayout/>,
+    errorElement: <NotFound />,
     children:[
       {
         path:'/',

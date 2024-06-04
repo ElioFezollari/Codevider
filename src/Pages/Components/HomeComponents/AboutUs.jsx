@@ -8,7 +8,7 @@ const AboutUs = () => {
       <div className="about-us-image-wrapper">
         <div className="responsive-div">
         <motion.img className="responsive-div"  variants={textAnimation} initial='hidden' whileInView='visible' viewport={{once:true}} src={dog} alt="picture of a dog laying on a mat" />
-        <motion.img variants={textAnimation} initial='hidden' whileInView='visible' viewport={{once:true}} transition={{delay:0.2}} className="dog-icon" src={dogIcon}/>
+        <motion.img variants={textAnimation} initial='hidden' whileInView='visible' viewport={{once:true}} transition={{delay:0.2}} className="dog-icon"alt="dog-icon" src={dogIcon}/>
         </div>
       </div>
       <div>

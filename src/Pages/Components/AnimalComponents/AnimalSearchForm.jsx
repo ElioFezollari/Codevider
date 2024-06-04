@@ -24,9 +24,9 @@ const AnimalSearchForm = ({setFilteredSearch,filteredSearch,setFilteredSelect,an
           <img src={magnifying} alt="" />
         </div>
         <div>
+          <label htmlFor="select">
         <select className="animal-select"
-          name=""
-          id=""
+          name="select"
           onChange={(e) => setFilteredSelect(e.target.value)}
         >
           <option value="">Country of the animal</option>
@@ -38,6 +38,7 @@ const AnimalSearchForm = ({setFilteredSearch,filteredSearch,setFilteredSelect,an
             );
           })}
         </select>
+        </label>
         </div>
       </div>
     )
