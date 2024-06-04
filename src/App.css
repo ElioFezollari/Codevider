@@ -563,56 +563,7 @@ footer{
   text-decoration: underline;
   font-weight: bold;
   margin-bottom: 5px;
-}
-
-/* MEDIA QUERY */
-@media only screen and (max-width: 1200px) {
-  .hero div,.responsive-div,#about-us .responsive-div{
-    width: 350px;
-    height: 350px;
-  }
-  h3{
-    font-size: 40px;
-  }
-
-  .hero ul li a{
-    width: 100px;
-  }
-  .responsive-paragraph{
-    font-size: 13px;
-  }
-  #about-us .dog-icon {
-    width: 100px;
-    height: 100px;
-    left: 0;
-}
-.message form div{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.animal-card-wrapper{
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-.message form input{
-  width: 150px;
-}
-.message form input[type=text],.message form input[type=email]{
-  height: 30px;
-}
-.email-label{
-  margin-top: 20px;
-}
-.cat-icon{
-  width: 100px;
-  height: 100px;
-}
-}
-.read-more{
-  font-weight: 700;
-  margin-top: 10px;
-}
-/* POP UP DESIGN */
+}/* POP UP DESIGN */
 .pop-up-wrapper{
   width: 100vw;
   height: 100vh;
@@ -706,11 +657,80 @@ footer{
   object-fit: cover;
 }
 
+/* MEDIA QUERY */
+@media only screen and (max-width: 1400px) {
+  .text-pop-up h4{
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hero div,.responsive-div,#about-us .responsive-div{
+    width: 350px;
+    height: 350px;
+  }
+  .animal-pop-up{
+    width: 80%;
+  }
+  .text-pop-up h4{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 40px;
+  }
+
+  .hero ul li a{
+    width: 100px;
+  }
+  .responsive-paragraph{
+    font-size: 13px;
+  }
+  #about-us .dog-icon {
+    width: 100px;
+    height: 100px;
+    left: 0;
+}
+.message form div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.animal-card-wrapper{
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.message form input{
+  width: 150px;
+}
+.message form input[type=text],.message form input[type=email]{
+  height: 30px;
+}
+.email-label{
+  margin-top: 20px;
+}
+.cat-icon{
+  width: 100px;
+  height: 100px;
+}
+}
+.read-more{
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+
 @media only screen and (max-width: 920px) {
   .animal-card-wrapper{
     grid-template-columns: 1fr 1fr ;
   }
-
+  .animal-pop-up{
+    width: 90%;
+  }
+  .animal-image,.heading-pop-up{
+    width: 300px;
+    height: 300px;
+  }
+  .additional-details-header{
+    margin-top: 30px;
+  }
   .hero div,.responsive-div,#about-us .responsive-div{
     width: 300px;
     height: 300px;
@@ -757,6 +777,14 @@ footer{
   .hero div,.responsive-div,#about-us .responsive-div{
     width: 250px;
     height: 250px;
+  }
+  .animal-image,.heading-pop-up{
+    width: 150px;
+    height: 150px;
+  }
+  .animal-pop-up p{
+    margin-top: 0;
+    font-size: 12px;
   }
   .hero ul li a{
     width: 70px;
