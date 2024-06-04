@@ -12,6 +12,13 @@ const cardAnimation = {
         y:'0',
         rotate:0,
         display:'block'
+    },
+    exit:{
+        opacity:0,
+        x:'-100px',
+        y:'20px',
+        rotate:-10,
+        display:'none'
     }
 }
 const textAnimation = {

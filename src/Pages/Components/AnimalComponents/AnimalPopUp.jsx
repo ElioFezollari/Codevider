@@ -1,8 +1,18 @@
 import close from "../../../assets/close.svg";
+import { motion,AnimatePresence } from "framer-motion";
+import { cardAnimation } from "../../../Variants";
 const AnimalPopUp = ({ animal, closePopUp, pictures }) => {
   return (
     <div className="pop-up-wrapper">
-      <div className="animal-pop-up">
+    <AnimatePresence>
+        {animal && (
+            <motion.div
+            className="animal-pop-up"   
+            key={animal.id} 
+            variants={cardAnimation}
+            initial='hidden'
+            animate='visible'
+            exit='exit'>
         <div className="pop-up-button-wrapper">
           <div className="pop-up-content-wrapper">
             <button onClick={() => closePopUp()} className="pop-up-button">
@@ -91,7 +101,10 @@ const AnimalPopUp = ({ animal, closePopUp, pictures }) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
+        )}
+      
+      </AnimatePresence>
       <div className="pop-up-overlay"></div>
     </div>
   );
