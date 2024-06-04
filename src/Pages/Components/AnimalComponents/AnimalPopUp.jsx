@@ -1,6 +1,9 @@
 import close from "../../../assets/close.svg";
 import { motion,AnimatePresence } from "framer-motion";
 import { cardAnimation } from "../../../Variants";
+import BirdPopUp from "./AnimalPopUp/BirdPopUp";
+import DogPopUp from "./AnimalPopUp/DogPopUp";
+import CatPopUp from "./AnimalPopUp/CatPopUp";
 const AnimalPopUp = ({ animal, closePopUp, pictures }) => {
   return (
     <div className="pop-up-wrapper">
@@ -42,61 +45,7 @@ const AnimalPopUp = ({ animal, closePopUp, pictures }) => {
                 <h4>Additional Details</h4>
               </div>
               <div className="additional-details">
-                {animal.temperament ? (
-                  <p>
-                    {animal.name}'s temperament: {animal.temperament}
-                  </p>
-                ) : (
-                  <p>
-                    {animal.name}'s species: {animal.species}
-                  </p>
-                )}
-                {animal.colors ? (
-                  <p>
-                    {animal.name}'s colours:{" "}
-                    {animal.colors.map((color) => color + " ")}
-                  </p>
-                ) : (
-                  <p>
-                    {animal.name}'s family: {animal.family}
-                  </p>
-                )}
-                {animal.breed_group && (
-                  <p>
-                    {animal.name}'s breed group: {animal.breed_group}'s
-                  </p>
-                )}
-                {animal.size && (
-                  <p>
-                    {animal.name}'s size: {animal.size}'s
-                  </p>
-                )}
-                {animal.lifespan && (
-                  <p>
-                    {animal.name}'s lifespan: {animal.lifespan}
-                  </p>
-                )}
-                {animal.habitat && (
-                  <p>
-                    {animal.name}'s habitat: {animal.habitat}
-                  </p>
-                )}
-                {animal.diet && (
-                  <p>
-                    {animal.name}'s diet: {animal.diet}
-                  </p>
-                )}
-                {animal.weight_kg && (
-                  <p>
-                    {animal.name}'s weight in kg: {animal.weight_kg}kg
-                  </p>
-                )}
-                {animal.wingspan_cm && (
-                  <p>
-                    {animal.name}'s wingspan in cm: {animal.wingspan_cm}cm
-                  </p>
-                )}
-                <p>Short Description: {animal.description}</p>
+                {animal.place_of_found ? <BirdPopUp animal={animal}/>: animal.temperament?<DogPopUp animal={animal}/> : <CatPopUp animal={animal}/>}
               </div>
             </div>
           </div>
