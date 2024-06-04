@@ -13,14 +13,7 @@ const HamburgerMenu = () => {
     }
   };
   const links = [
-    {
-      href: "/#about-us",
-      content: "About Us",
-    },
-    {
-      href: "/#contact-us",
-      content: "Contact Us",
-    },
+    
     {
       href: "dogs",
       content: "Dogs",
@@ -68,7 +61,11 @@ const HamburgerMenu = () => {
           transition={{ delay: 0.2 }}
           className="link-mobile-header-div"
         >
+          <Link to='/'>Home</Link>
+        <a href="/#about-us" >About Us</a>
+        <a href="/#contact-us">Contact Us</a>
           {links.map((link, index) => (
+            
             <Link onClick={clickedButton} key={index} to={link.href}>
               {link.content}
             </Link>

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <a>
+      <Link to='/'>
         <img src={Logo} alt="Petexpo Logo" />
-      </a>
+      </Link>
       <nav>
         <Link to='/'>Home</Link>
         <a href="/#about-us" >About Us</a>
