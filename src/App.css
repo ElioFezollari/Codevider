@@ -575,7 +575,7 @@ footer{
 }
 .animal-pop-up{
   border-radius: 20px;
-  width: 60%;
+  width: 80%;
   color: #FAFAFA;
   margin-top: 100px;
   height: 80%;
@@ -698,7 +698,7 @@ footer{
     height: 350px;
   }
   .animal-pop-up{
-    width: 80%;
+    width: 90%;
   }
   .text-pop-up h4{
     font-size: 20px;
@@ -750,9 +750,7 @@ footer{
   .animal-card-wrapper{
     grid-template-columns: 1fr 1fr ;
   }
-  .animal-pop-up{
-    width: 90%;
-  }
+
   .animal-image,.heading-pop-up{
     width: 300px;
     height: 300px;
